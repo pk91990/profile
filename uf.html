@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GSAP SplitText Example</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="split">Hello GSAP SplitText!</h1>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- SplitText Plugin -->
+  <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(SplitText);
+
+    let split = SplitText.create(".split", { type: "words, chars" });
+
+    gsap.from(split.chars, {
+      duration: 1,
+      y: 100,
+      autoAlpha: 0,
+      stagger: 0.05
+    });
+  </script>
+</body>
+</html>
